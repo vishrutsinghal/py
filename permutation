@@ -1,0 +1,17 @@
+def perm(input, i):
+    if i==len(input)-1:
+        print(input)
+    else:
+        for j in range(i,len(input)):
+            input[i], input[j]=input[j],input[i]
+            perm(input, i+1)
+            input[i], input[j]=input[j],input[i]
+perm([1,2,3],0)
+
+----------------------------------------------------------
+
+def permutations(head, tail=''):
+    if len(head) == 0: print tail
+    else:
+        for i in range(len(head)):
+            permutations(head[0:i] + head[i+1:], tail+head[i])
