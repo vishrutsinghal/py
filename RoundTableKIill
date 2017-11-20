@@ -1,0 +1,37 @@
+N=5
+X=3
+K=2
+def next_candidate(x,n):
+    if x<n:
+        y=x+1
+    else:
+        y=1
+    while y<=n and not alive[y]:
+        y=y+1
+        if y>n:
+            y=1
+    return y
+    
+
+alive={i:True for i in range(1,N+1)} #printing dic with value 0
+print(alive)
+remaining=N
+while remaining>X%K:
+    how_many_to_kill=X%K
+    i=0
+    cand=next_candidate(X,N)
+    while i<how_many_to_kill:
+        if alive[cand]:
+            alive[cand]=False
+            remaining=remaining-1
+            i=i+1
+        cand = next_candidate(cand, N)
+        
+    X = next_candidate(X, N)
+
+
+print(X)
+
+
+        
+    
