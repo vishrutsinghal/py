@@ -1,0 +1,26 @@
+ength = int(input())
+data = str(input())
+count = 0
+ 
+word = "hackerearth"
+ 
+h = data.count("h") #twice
+a = data.count("a") #twice
+c = data.count("c")
+k = data.count("k")
+e = data.count("e") #twice
+r = data.count("r") #twice
+t = data.count("t")
+ 
+while (1):
+    if ((h==0)or(a==0)or(c==0)or(k==0)or(e==0)or(r==0)or(t==0)or(h==1)or(a==1)or(e==1)or(r==1)):
+        break
+    h-=2
+    a-=2
+    c-=1
+    k-=1
+    e-=2
+    r-=2
+    t-=1
+    count+=1
+print(count)
