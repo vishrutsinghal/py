@@ -1,0 +1,92 @@
+package frmawork1.phase2;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
+public class property_load {
+
+//	public static void main(String[] args) throws IOException {
+	public static String  fetch_data(String val) throws IOException
+	{
+//		 Map<String,String> propertyMap = new HashMap();
+
+		String filesrc= "C:\\Users\\vsinghal2\\workspace\\phase2\\src\\main\\DataFile.properties";
+		Properties pro = new Properties();
+		FileReader reader = new FileReader(filesrc);
+		pro.load(reader);
+		String data=pro.getProperty(val);
+
+		return data;
+		
+		
+	}
+
+//	public static void put_wait(int )
+}
+
+
+
+
+
+
+
+
+
+
+package frmawork1.phase2;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.testng.annotations.*;
+import java.util.concurrent.TimeUnit;
+
+
+public class NewTest {
+	
+	
+
+@BeforeTest
+public void launch_browser() throws IOException
+	{
+	  String chromeDriver= property_load.fetch_data("chromedriver");
+	  System.setProperty("webdriver.chrome.driver", chromeDriver);
+	  WebDriver driver = new ChromeDriver();
+	  String baseURL = property_load.fetch_data("baseURL");
+	  driver.get(baseURL);
+	  WebElement greentea= driver.findElement(By.xpath("//*[@href='menu.html']/img"));
+
+	  
+	  Wait wait =new FluentWait<WebElement>(greentea)
+	  	  		.withTimeout(30, TimeUnit.SECONDS)
+	  	  		.pollingEvery(5, TimeUnit.SECONDS)
+	  	  		.ignoring(NoSuchElementException.class).
+	  	  		until(new Function<WebElement, Boolean>()
+	  	  				{
+	  	  				@Override
+	  	  				public boolean apply(WebElement element))
+	  	  				}
+	  
+
+	
+	}
+
+	
+
+}
