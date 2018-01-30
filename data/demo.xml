@@ -1,0 +1,57 @@
+<TestData>
+<TestCaseName name="Test_Case_for_Demo" execute="yes"> 
+		 <stepName name="Launch demo test">
+			<moduleCode>DEMO</moduleCode>
+			<actionCode>launchApp</actionCode>
+			<abortIfUnexpected>FALSE</abortIfUnexpected>
+			<_selectYN>Yes</_selectYN>
+			<url>https://www.tutorialspoint.com/</url>
+		</stepName>
+		<stepName name="Demo step">
+			<moduleCode>DEMO</moduleCode>
+			<actionCode>function</actionCode>
+			<abortIfUnexpected>FALSE</abortIfUnexpected>
+			<_selectYN>Yes</_selectYN>
+			<PageTile>Jython, Financial Accounting, Text and Video</PageTile>
+			<Tutorialtitle>Free Online Tutorials and Courses</Tutorialtitle>
+			<Subjecttitle>Apache Ant Tutorial</Subjecttitle>
+		</stepName>
+	<stepName name="TearOff step">
+			<moduleCode>DEMO</moduleCode>
+			<actionCode>tearoff</actionCode>
+			<abortIfUnexpected>FALSE</abortIfUnexpected>
+			<_selectYN>Yes</_selectYN>
+			<PageTile>Jython, Financial Accounting, Text and Video</PageTile>
+			<Tutorialtitle>Free Online Tutorials and Courses</Tutorialtitle>
+			<Subjecttitle>Apache</Subjecttitle>
+		</stepName>	
+</TestCaseName>
+
+<TestCaseName name="Test_Case_for_Demo_fail" execute="no"> 
+		 <stepName name="Launch demo test Faile">
+			<moduleCode>DEMO</moduleCode>
+			<actionCode>launchApp</actionCode>
+			<abortIfUnexpected>FALSE</abortIfUnexpected>
+			<_selectYN>Yes</_selectYN>
+			<url>https://www.tutorialspoint.com/</url>
+		</stepName>
+		<stepName name="Demo step">
+			<moduleCode>DEMO</moduleCode>
+			<actionCode>function</actionCode>
+			<abortIfUnexpected>FALSE</abortIfUnexpected>
+			<_selectYN>Yes</_selectYN>
+			<PageTile>Jyth00n, Financial Accounting, Text and Video</PageTile>
+			<Tutorialtitle>Free Online Tutorials and Courses</Tutorialtitle>
+			<Subjecttitle>Apache Ant Tutorial</Subjecttitle>
+		</stepName>
+	<stepName name="TearOff step">
+			<moduleCode>DEMO</moduleCode>
+			<actionCode>tearoff</actionCode>
+			<abortIfUnexpected>FALSE</abortIfUnexpected>
+			<_selectYN>Yes</_selectYN>
+			<PageTile>Jython, Financial Accounting, Text and Video</PageTile>
+			<Tutorialtitle>Free Online Tutorials and Courses</Tutorialtitle>
+			<Subjecttitle>Apache</Subjecttitle>
+		</stepName>	
+</TestCaseName>
+</TestData>

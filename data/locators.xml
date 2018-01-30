@@ -1,0 +1,79 @@
+<Locators Applicationname="OLB">
+	<elementName name="LoginPage.UserID">
+		<locator>Email</locator>
+		<type>TextBox</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="LoginPage.UserIDPageTitle">
+		<locator>/html/body/form/table[1]/tbody/tr/td</locator>
+		<type>WebElement</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="LoginPage.NextBtn">
+		<locator>/html/body/form/table[2]/tbody/tr[7]/td[2]/table/tbody/tr[4]/td/a/img</locator>
+		<type>ImageLink</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="LoginPage.Password">
+		<locator>Passwd</locator>
+		<type>TextBox</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="LoginPage.PasswordPageTitle">
+		<locator>//*[@id='titleOLB']/span</locator>
+		<type>WebElement</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="LoginPage.SubmitBtn">
+		<locator>//*[@id='passwordField3']/a/img</locator>
+		<type>ImageLink</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="Login.LandingPageTitle">
+		<locator>Union Bank - Account Summary</locator>
+		<type>WebElement</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="Login.LandingPageTitle">
+		<locator>Union Bank - Account Summary</locator>
+		<type>WebElement</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="SecurityPage.PageTitle">
+		<locator>/html/body/form/table/tbody/tr/td[2]/table/tbody/tr[1]/td</locator>
+		<type>WebeElement</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="SecurityPage.ChallengeAnswer">
+		<locator>challengeAnswer</locator>
+		<type>WebeElement</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="SecurityPage.ChallengeQuestionLabel">
+		<locator>/html/body/form/table/tbody/tr/td[2]/table/tbody/tr[10]/td</locator>
+		<type>WebeElement</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="SecurityPage.SubmitBtn">
+		<locator>/html/body/form/table/tbody/tr/td[2]/table/tbody/tr[11]/td[2]/a/img</locator>
+		<type>WebeElement</type>
+		<others></others>
+	</elementName>
+
+	<elementName name="OLBHomePage.SignOut">
+		<locator>//div[@class='gb_fb gb_Jc gb_Cf gb_R']/div/a</locator>
+		<type>WebeElement</type>
+		<others></others>
+	</elementName>
+</Locators>
