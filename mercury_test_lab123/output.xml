@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.6.4 on win32)" generated="20180207 17:08:50.665">
+<suite id="s1" name="MercurySuite1" source="C:\Users\vsinghal2\Desktop\mercury_test_lab\MercurySuite1.robot">
+<test id="s1-t1" name="TestCase1: Login Invalid Credentials">
+<kw name="Open Mercury Website in Chrome and Maximize" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>url=${URL}</arg>
+<arg>browser=${BrowserName}</arg>
+</arguments>
+<msg timestamp="20180207 17:08:50.837" level="INFO">Opening browser 'Chrome' to base url 'http://newtours.demoaut.com/'.</msg>
+<status status="PASS" starttime="20180207 17:08:50.837" endtime="20180207 17:08:59.403"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Browser is Maximized</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:08:59.404" endtime="20180207 17:08:59.404"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:08:50.837" endtime="20180207 17:08:59.404"></status>
+</kw>
+<kw name="Verify the Home page title" library="Common">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20180207 17:08:59.412" level="INFO">Page title is 'Welcome: Mercury Tours'.</msg>
+<status status="PASS" starttime="20180207 17:08:59.405" endtime="20180207 17:08:59.412"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Home Page Title Verified</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:08:59.412" endtime="20180207 17:08:59.413"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:08:59.405" endtime="20180207 17:08:59.413"></status>
+</kw>
+<kw name="Click on Sign-On Link" library="Keywords">
+<kw name="Get SignOn Xpath" library="Locators">
+<assign>
+<var>${signOn}</var>
+</assign>
+<msg timestamp="20180207 17:08:59.414" level="INFO">${signOn} = //*[contains(text(),'SIGN-ON')]</msg>
+<status status="PASS" starttime="20180207 17:08:59.413" endtime="20180207 17:08:59.414"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=${signOn}</arg>
+</arguments>
+<msg timestamp="20180207 17:08:59.414" level="INFO">Clicking element 'xpath=//*[contains(text(),'SIGN-ON')]'.</msg>
+<status status="PASS" starttime="20180207 17:08:59.414" endtime="20180207 17:09:00.107"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Clicked on Signon link successfully.</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:09:00.107" endtime="20180207 17:09:00.108"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:08:59.413" endtime="20180207 17:09:00.108"></status>
+</kw>
+<kw name="Verify SignOn Page title" library="Keywords">
+<kw name="Get Title" library="Selenium2Library">
+<doc>Returns the title of current page.</doc>
+<assign>
+<var>${WindowTitle}</var>
+</assign>
+<msg timestamp="20180207 17:09:00.115" level="INFO">${WindowTitle} = Sign-on: Mercury Tours</msg>
+<status status="PASS" starttime="20180207 17:09:00.109" endtime="20180207 17:09:00.115"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${WindowTitle}</arg>
+<arg>Sign-on: Mercury Tours</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:09:00.115" endtime="20180207 17:09:00.115"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Navigated to :${WindowTitle}</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:09:00.115" endtime="20180207 17:09:00.116"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:09:00.109" endtime="20180207 17:09:00.116"></status>
+</kw>
+<kw name="Check if Registration link is available" library="Keywords">
+<kw name="Get RegisterLink Xpath" library="Locators">
+<assign>
+<var>${a}</var>
+</assign>
+<msg timestamp="20180207 17:09:00.117" level="INFO">${a} = //*[contains(text(),'registration')]</msg>
+<status status="PASS" starttime="20180207 17:09:00.117" endtime="20180207 17:09:00.117"></status>
+</kw>
+<kw name="Get Element Attribute" library="Selenium2Library">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>xpath=${a}</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${b}</var>
+</assign>
+<msg timestamp="20180207 17:09:00.136" level="INFO">${b} = http://newtours.demoaut.com/mercuryregister.php</msg>
+<status status="PASS" starttime="20180207 17:09:00.117" endtime="20180207 17:09:00.136"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Href attribute found :${b}</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:09:00.137" endtime="20180207 17:09:00.137"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:09:00.116" endtime="20180207 17:09:00.138"></status>
+</kw>
+<kw name="Check header is successfully displaying" library="Keywords">
+<kw name="Get EnterYourInfo Xpath" library="Locators">
+<assign>
+<var>${a}</var>
+</assign>
+<msg timestamp="20180207 17:09:00.138" level="INFO">${a} = //*[contains(text(),'Enter your user info')]</msg>
+<status status="PASS" starttime="20180207 17:09:00.138" endtime="20180207 17:09:00.138"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${a}</arg>
+</arguments>
+<assign>
+<var>${b}</var>
+</assign>
+<msg timestamp="20180207 17:09:00.158" level="INFO">${b} = Welcome back to Mercury Tours! Enter your user information to access the member-only areas of this site. If you don't have a log-in, please fill out the registration form.</msg>
+<status status="PASS" starttime="20180207 17:09:00.138" endtime="20180207 17:09:00.158"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${b}</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:09:00.158" endtime="20180207 17:09:00.158"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:09:00.138" endtime="20180207 17:09:00.158"></status>
+</kw>
+<kw name="Enter Invalid UserName" library="Keywords">
+<kw name="Get UserName" library="Locators">
+<assign>
+<var>${a}</var>
+</assign>
+<msg timestamp="20180207 17:09:00.174" level="INFO">${a} = //input[ @ name = 'userName']</msg>
+<status status="PASS" starttime="20180207 17:09:00.174" endtime="20180207 17:09:00.174"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${a}</arg>
+<arg>${UserName}</arg>
+</arguments>
+<msg timestamp="20180207 17:09:00.174" level="INFO">Typing text 'Aditya' into text field '//input[ @ name = 'userName']'.</msg>
+<status status="PASS" starttime="20180207 17:09:00.174" endtime="20180207 17:09:00.248"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Entered wrong username</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:09:00.248" endtime="20180207 17:09:00.248"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:09:00.158" endtime="20180207 17:09:00.248"></status>
+</kw>
+<kw name="Enter Invalid Password" library="Keywords">
+<kw name="Get Password" library="Locators">
+<assign>
+<var>${a}</var>
+</assign>
+<msg timestamp="20180207 17:09:00.249" level="INFO">${a} = xpath=//input[@name='password']</msg>
+<status status="PASS" starttime="20180207 17:09:00.249" endtime="20180207 17:09:00.249"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${a}</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20180207 17:09:00.249" level="INFO">Typing text 'Test123' into text field 'xpath=//input[@name='password']'.</msg>
+<status status="PASS" starttime="20180207 17:09:00.249" endtime="20180207 17:09:00.317"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Entered wrong password</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:09:00.318" endtime="20180207 17:09:00.318"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:09:00.249" endtime="20180207 17:09:00.318"></status>
+</kw>
+<kw name="Click on Submit" library="Keywords">
+<kw name="Get Submit" library="Locators">
+<assign>
+<var>${a}</var>
+</assign>
+<msg timestamp="20180207 17:09:00.319" level="INFO">${a} = //input[ @ name = 'login']</msg>
+<status status="PASS" starttime="20180207 17:09:00.319" endtime="20180207 17:09:00.319"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${a}</arg>
+</arguments>
+<msg timestamp="20180207 17:09:00.319" level="INFO">Clicking element '//input[ @ name = 'login']'.</msg>
+<status status="PASS" starttime="20180207 17:09:00.319" endtime="20180207 17:09:02.045"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Clicking on Submit</arg>
+</arguments>
+<status status="PASS" starttime="20180207 17:09:02.046" endtime="20180207 17:09:02.046"></status>
+</kw>
+<status status="PASS" starttime="20180207 17:09:00.318" endtime="20180207 17:09:02.046"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>${timeout}</arg>
+</arguments>
+<msg timestamp="20180207 17:09:05.055" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20180207 17:09:02.047" endtime="20180207 17:09:05.055"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20180207 17:09:05.055" endtime="20180207 17:09:08.118"></status>
+</kw>
+<doc>This is to verify invalid login Mercury Tours Home Page</doc>
+<tags>
+<tag>smoke</tag>
+<tag>Suite1</tag>
+</tags>
+<status status="PASS" starttime="20180207 17:08:50.837" endtime="20180207 17:09:08.118" critical="yes"></status>
+</test>
+<doc>Testing MercuryTours Website Suite1</doc>
+<status status="PASS" starttime="20180207 17:08:50.665" endtime="20180207 17:09:08.118"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">smoke</stat>
+<stat pass="1" fail="0">Suite1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="MercurySuite1">MercurySuite1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180207 17:08:50.805" level="ERROR">Error in file 'C:\Users\vsinghal2\Desktop\mercury_test_lab\MercurySuite1.robot': Importing test library 'MercurySuite1.robot' failed: ModuleNotFoundError: No module named 'MercurySuite1'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\python36.zip
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\DLLs
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\py_hpalm-0.0.2-py3.6.egg
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\win32
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\win32\lib
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\Pythonwin</msg>
+<msg timestamp="20180207 17:08:50.805" level="ERROR">Error in file 'C:\Users\vsinghal2\Desktop\mercury_test_lab\MercurySuite1.robot': Importing test library 'MercurySuite2.robot' failed: ModuleNotFoundError: No module named 'MercurySuite2'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\python36.zip
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\DLLs
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\py_hpalm-0.0.2-py3.6.egg
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\win32
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\win32\lib
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\Pythonwin</msg>
+<msg timestamp="20180207 17:08:50.821" level="ERROR">Error in file 'C:\Users\vsinghal2\Desktop\mercury_test_lab\MercurySuite1.robot': Importing test library 'MercurySuite3.robot' failed: ModuleNotFoundError: No module named 'MercurySuite3'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\python36.zip
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\DLLs
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\py_hpalm-0.0.2-py3.6.egg
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\win32
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\win32\lib
+  C:\Users\vsinghal2\AppData\Local\Programs\Python\Python36-32\lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>
