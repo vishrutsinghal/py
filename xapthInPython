@@ -5,49 +5,25 @@ driver.get("http://google.com")
 xpath_list = []
 
 tagnames = ["input", "a", "href", "div"]
+attribute_list = ["id", "name", "class", "a", "href", "div"]
 for tagname in tagnames:
     xx = [x for x in driver.find_elements_by_tag_name(tagname)]
     for element in xx:
-        attribute = element.get_attribute("name")
-        if attribute:
-            id_path1 = "//" + tagname + "@[name=" + attribute + "]"
-            xpath_list.append(id_path1)
-            print(id_path1)
+        for attr in attribute_list:
+            attribute = element.get_attribute(attr)
+            if attribute:
+                id_path1 = "//" + tagname + "@[" + attr + "=" + attribute + "]"
+                xpath_list.append(id_path1)
+                print(id_path1)
+print("len: ", len(xpath_list))
 
-        attribute = element.get_attribute("id")
-        if attribute:
-            id_path1 = "//" + tagname + "@[id=" + attribute + "]"
-            xpath_list.append(id_path1)
-            print(id_path1)
-
-        attribute = element.get_attribute("class")
-        if attribute:
-            id_path1 = "//" + tagname + "@[class=" + attribute + "]"
-            xpath_list.append(id_path1)
-            print(id_path1)
-
-        attribute = element.get_attribute("src")
-        if attribute:
-            id_path1 = "//" + tagname + "@[src=" + attribute + "]"
-            xpath_list.append(id_path1)
-            print(id_path1)
-
-        attribute = element.get_attribute("alt")
-        if attribute:
-            id_path1 = "//" + tagname + "@[alt=" + attribute + "]"
-            print(id_path1)
-
-        attribute = element.get_attribute("type")
-        if attribute:
-            id_path1 = "//" + tagname + "@[type=" + attribute + "]"
-            xpath_list.append(id_path1)
-            print(id_path1)
-
-# with open("D:/outfile.txt", "wb") as fp:
-#     pickle.dump(xpath_list, fp)
-import simplejson
-f = open("D:/output2.txt", "w")
-simplejson.dump(xpath_list, f)
-f.close
 
 driver.close()
+
+with open("D:/outfile.txt", 'w') as file_handler:
+    for item in xpath_list:
+        file_handler.write("{}\n".format(item))
+# import simplejson
+# f = open("D:/output2.txt", "w")
+# simplejson.dump(xpath_list, f)
+# f.close
